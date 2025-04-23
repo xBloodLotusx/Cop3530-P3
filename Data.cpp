@@ -7,16 +7,15 @@
 #include "Data.h"
 class Match {
 public:
-    std::string match_date;
-    std::string home_team;
+    int date;
+    std::string name;
     std::string away_team;
     int home_score;
     int away_score;
 
-    Match(std::string date, std::string home, std::string away, int hscore, int ascore)
-            : match_date(date), home_team(home), away_team(away), home_score(hscore), away_score(ascore) {}
+    Match(int date, std::string name, std::string away, int hscore, int ascore)
+            : date(date), name(name), away_team(away), home_score(hscore), away_score(ascore) {}
+
 };
-
-
 
 

@@ -14,17 +14,17 @@ int main() {
     std::istringstream stream(line);
     std::string num, name, opp;
     stream >> num >> name >> opp;
-    std::vector<instance> data, mdata, qdata;
+    std::vector<Match> data, mdata, qdata;
     if (num == "1") {
         std::cout << "1" << std::endl;
-        std::vector<instance> mdata = Mergesort<std::vector<instance>, instance>(data, data.begin(), data.end(), name, "");
-        qdata = Quicksort<std::vector<instance> >(data, name, "");
+        mdata = Mergesort<std::vector<Match> >(data, 0, data.size()-1, name, "");
+        qdata = Quicksort<std::vector<Match> >(data, name, "");
+        for (auto it=0; it < qdata.size(); it++) {
+
+        }
     }
     else if (num == "2") {
         std::cout << "2" << std::endl;
-    }
-    else if (num == "3") {
-        std::cout << "3" << std::endl;
     }
     return 0;
 }
