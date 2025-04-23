@@ -21,7 +21,7 @@ int main() {
     if (num == "1") {
         std::cout << "1" << std::endl;
         std::vector<Match> mdata = Mergesort(data, 0, data.size() - 1, name, "");
-        std::vector<Match> qdata = Quicksort<std::vector<Match> >(data, name, "");
+        std::vector<Match> qdata = Quicksort(data, name, "");
         for (auto it=0; it < qdata.size(); it++) {
 
         }

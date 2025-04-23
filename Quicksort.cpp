@@ -5,19 +5,19 @@
 // returning a subset using a data structure of type T. T cannot be a vector
 template <typename T>
 T Quicksort(const T& data, const std::string& name, const std::string& opponent = "") {
-    auto pivot = *data.begin();
+    auto pivot = data[0];
     T right, subset; // This will be subset of the data that is usable for our formula
-    for (auto it = std::next(data.begin()); it != data.end(); it++) {
-        if (it->name != name) continue;
-        if (*it < pivot) {
-            subset.push_back(*it);
+    for (int i=0; i < data.size(); i++) {
+        if (data[i].name != name) continue;
+        if (data[i].date < pivot.date) {
+            subset.push_back(data[i]);
         }
         else {
-            right.push_back(*it);
+            right.push_back(data[i]);
         }
     }
-    subset = Quicksort<T>(subset, 0, subset.size() - 1, name, opponent);
-    right = Quicksort<T>(right, 0, right.size() - 1, name, opponent);
+    subset = Quicksort(subset, name, opponent);
+    right = Quicksort(right, name, opponent);
     if (pivot.name == name) {
         subset.push_back(pivot);
     }

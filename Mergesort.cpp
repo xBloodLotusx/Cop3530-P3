@@ -1,42 +1,11 @@
 #include <iostream>
 #include <vector>
 #include "Data.cpp"
+#include "Merge.cpp"
 // Created by Joshua Austin Land on 4/12/25.
 // Currently, Mergesort takes in a vector or list and creates a subset of all instances
 // that match with team name.
-template <typename T>
-void Merge(const T& subset, T& Lsort, T& Rsort, const std::string& name, const std::string& opponent = "") {
-    auto L = Lsort.begin();
-    auto R = Rsort.begin();
 
-    while (L != Lsort.end() && R !=Rsort.end()) {
-        if (L->name != name) {
-            L++;
-            continue;
-        }
-        if (R->name != name) {
-            R++;
-            continue;
-        }
-        if (L->date < R->date) {
-            subset.push_back(*L);
-            L++;
-        }
-        else {
-            subset.push_back(*R);
-            R++;
-
-        }
-    }
-    while (L != Lsort.end()) { // Subset clause needed
-        subset.push_back(*L);
-        L++;
-    }
-    while (R != Rsort.end()) { // Subset clause needed
-        subset.push_back(*R);
-        R++;
-    }
-}
 template <typename T>
 T Mergesort(const T& data, int left, int right, const std::string& name, const std::string& opponent = "") {
     T subset; // This will be subset of the data that is usable for our formula
