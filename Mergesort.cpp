@@ -1,10 +1,11 @@
 #include <iostream>
+#include <vector>
 #include "Data.cpp"
 // Created by Joshua Austin Land on 4/12/25.
 // Currently, Mergesort takes in a vector or list and creates a subset of all instances
 // that match with team name.
 template <typename T>
-void Merge(T& subset, T Lsort, T Rsort, const std::string& name, const std::string& opponent = "") {
+void Merge(const T& subset, T& Lsort, T& Rsort, const std::string& name, const std::string& opponent = "") {
     auto L = Lsort.begin();
     auto R = Rsort.begin();
 
